@@ -1,16 +1,11 @@
 <?php
     function IsPalindrome($phrase) {
-
-        $phrase = strtolower($phrase);
-        $newString = preg_replace( '/[\W]/', '',$phrase);
-
-        $reverseStr =strrev($newString);
-
-        if ($newString == $reverseStr){
+        $newString = preg_replace( '/[\W]/', '',strtolower($phrase));
+        if ($newString == strrev($newString)){
             return true;
         }
     }  
-    
+
     $var = "Eva, Can I See Bees In A Cave?";
     
     if (ispalindrome($var)){
