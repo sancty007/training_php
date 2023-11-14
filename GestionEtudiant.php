@@ -18,12 +18,6 @@ $etudiants =[
     ]
 ];
 
-// Affiche nom des eleves 
-
-/* for($i =  0 ; $i <count($etudiants); $i++){
-    echo "le nom de l'eleve $i est : ".$etudiants[$i]['nom'] ."\n";
-} */
-
 // Affiche moyenne de chaque Etudiant 
 
 $somme = 0 ;
