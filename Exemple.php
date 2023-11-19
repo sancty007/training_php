@@ -7,5 +7,5 @@
 
     </div> <!-- /container -->
 
-<?php "footer.php"; ?>
+<?php require "footer.php";?>
 
