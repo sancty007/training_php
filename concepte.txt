@@ -1,0 +1,39 @@
+En PHP, `require`, `include` et `require_once` sont tous des instructions utilisées pour inclure des fichiers dans un script PHP. Cependant, ils ont quelques différences notables :
+
+1. **`include`** :
+   - L'instruction `include` permet d'inclure un fichier dans un script PHP.
+   - Si le fichier spécifié dans l'instruction `include` n'est pas trouvé, PHP émettra un avertissement (warning) mais continuera l'exécution du script.
+   - Si plusieurs `include` sont utilisés pour inclure le même fichier à plusieurs endroits, il pourrait y avoir des répétitions indésirables.
+
+   Exemple :
+
+   <?php
+   include 'monfichier.php';
+   ?>
+ 
+
+2. **`require`** :
+   - L'instruction `require` fonctionne de manière similaire à `include`, mais avec une différence clé : si le fichier spécifié n'est pas trouvé, PHP émettra une erreur fatale (fatal error) et arrêtera l'exécution du script.
+   - `require` est généralement utilisé lorsque l'inclusion du fichier est absolument nécessaire pour que le script fonctionne correctement.
+
+   Exemple :
+
+   <?php
+   require 'monfichier.php';
+   ?>
+
+
+3. **`require_once`** :
+   - L'instruction `require_once` fonctionne de la même manière que `require`, mais elle vérifie également si le fichier a déjà été inclus ailleurs dans le script. Si c'est le cas, il ne le réinclura pas.
+   - Cela évite les problèmes de répétition d'inclusions et peut être utile pour éviter des erreurs si un fichier est nécessaire à plusieurs endroits.
+
+   Exemple :
+
+   <?php
+   require_once 'monfichier.php';
+   ?>
+
+En résumé, les différences principales entre `include`, `require`, et `require_once` résident dans la gestion des erreurs (avertissements vs erreurs fatales), ainsi que dans la possibilité d'inclure plusieurs fois le même fichier (`include` permet les répétitions, tandis que `require_once` évite les répétitions).
+
+
+## Creation d'un serveur php : 
