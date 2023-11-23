@@ -1,3 +1,25 @@
+<?php
+            function nav_item(string $lien,string $titre) :string {
+
+               $class ="nav-item";
+
+               if ($_SERVER["SCRIPT_NAME"]===$lien){
+                $class .=" active";
+               }
+                $html ='
+                <li class="'. $class .'">
+                    <a class="nav-link" aria-current="page" href="'. $lien .' " >' .$titre.'</a>
+                </li>"';
+
+                return $html;
+                /*
+                 <li class="nav-item">
+                            <a class="nav-link <?php if ($_SERVER["SCRIPT_NAME"]==="/training_php/contact.php") : ?>active<?php endif;?>" aria-current="page" href="contact.php">contact</a>
+                        </li>
+                */
+            }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,17 +53,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link <?php if ($nav==="Acceuil") :?>active<?php endif;?>" aria-current="page" href="Exemple.php">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?php if ($nav==="contact") : ?>active<?php endif;?>" aria-current="page" href="contact.php">contact</a>
-                        </li>
+                    <u class="navbar-nav">
+                        <?php echo nav_item("Exemple.php","Exemple") ?>   
+                        <?php echo nav_item("contact.php","contact")?>  
                     </ul>
                 </div>
             </div>
         </nav>
+       
 
 
     <!-- Votre contenu va ici -->

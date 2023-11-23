@@ -2,6 +2,7 @@
     $title ="La page de contact";
     $nav ="contact";
     require "header.php";
+  
 ?>
     <div class="container">
         <h1>Nous contacter</h1>
