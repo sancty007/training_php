@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>
+        <?php print_r($title);?>
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -31,13 +33,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Exemple.php">Home</a>
+                            <a class="nav-link <?php if ($nav==="Acceuil") :?>active<?php endif;?>" aria-current="page" href="Exemple.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact</a>
+                            <a class="nav-link <?php if ($nav==="contact") : ?>active<?php endif;?>" aria-current="page" href="contact.php">contact</a>
                         </li>
                     </ul>
                 </div>

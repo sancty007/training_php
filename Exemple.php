@@ -1,4 +1,8 @@
-<?php require "header.php";?>
+<?php 
+  $title ="La page d'acceuil";
+  $nav ="Acceuil";
+  require "header.php";
+?>
  
     <div class="container">
 
