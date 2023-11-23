@@ -1,23 +1,24 @@
 <?php
-            function nav_item(string $lien,string $titre) :string {
+    function nav_item(string $lien,string $titre) :string {
 
-               $class ="nav-item";
+        $class ="nav-item";
+        $active =" active";
+        if ($_SERVER["SCRIPT_NAME"]===$lien){
+          
+            $class .=$active;
+        }
+        $html ='
+        <li class="'. $class .'">
+            <a class="nav-link"  aria-current="page" href="'. $lien .' " >' .$titre.'</a>
+        </li>"';
 
-               if ($_SERVER["SCRIPT_NAME"]===$lien){
-                $class .=" active";
-               }
-                $html ='
-                <li class="'. $class .'">
-                    <a class="nav-link" aria-current="page" href="'. $lien .' " >' .$titre.'</a>
-                </li>"';
-
-                return $html;
-                /*
-                 <li class="nav-item">
-                            <a class="nav-link <?php if ($_SERVER["SCRIPT_NAME"]==="/training_php/contact.php") : ?>active<?php endif;?>" aria-current="page" href="contact.php">contact</a>
-                        </li>
-                */
-            }
+        return $html;
+        /*
+            <li class="nav-item">
+                    <a class="nav-link <?php if ($_SERVER["SCRIPT_NAME"]==="/training_php/contact.php") : ?>active<?php endif;?>" aria-current="page" href="contact.php">contact</a>
+                </li>
+        */
+    }
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +55,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <u class="navbar-nav">
-                        <?php echo nav_item("Exemple.php","Exemple") ?>   
+                        <?php echo nav_item("Exemple.php","home") ?>   
                         <?php echo nav_item("contact.php","contact")?>  
                     </ul>
                 </div>

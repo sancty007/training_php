@@ -1,9 +1,6 @@
 <?php 
     $title ="La page de contact";
-    $nav ="contact";
-    require "header.php";
-  
-?>
+    require "header.php";?>
     <div class="container">
         <h1>Nous contacter</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae ut, iure sint, quae cumque molestiae nobis error porro sequi quibusdam odit quod ex adipisci illo consectetur alias pariatur est voluptates.</p>
