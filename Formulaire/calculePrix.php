@@ -20,14 +20,6 @@ require "../header.php";
    ];
 ?>
 <?php 
-
-    function  generateCheckedAttribute($arrayProduct , $element) {
-
-        if(isset($arrayProduct) && in_array($element,$array)) {
-            echo 'checked' ;
-        }
-    }
-
     function calculPrixTotal($arrayProduct ,$buttonEnvoyer){
         
         // recupere les valeurs du tableau  
@@ -38,23 +30,28 @@ require "../header.php";
     
         if(isset($envoyer)){
                 echo "<h3> Voici les Parfum choisis <h3>";
-                foreach ($arrayProduct as $key) {
-                    $conteur +=intval($key);
+                foreach ($arrayProduct as $key => $value) {
+                    $conteur +=intval($value);
                 }
                 echo "<h4>Le Prix TOTAL : $conteur cfa</h4>";
         }
       }
 
+      function  generateCheckedAttribute($arrayProduct,$element) {
+
+        if(isset($arrayProduct) && in_array($element,$arrayProduct)) {
+            echo 'checked' ;
+        }
+    }
+
 ?>
 <form action="./calculePrix.php" method="POST" style="font-family: Arial, sans-serif; margin: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
     <div class="form-group" style="margin-bottom: 15px;">
-
         <?php foreach ($parfums as $parfum => $prix) :?>
-            <input type="checkbox" name="t_parfum[]" value="<?= $prix?>"/> 
+            <input type="checkbox" name="t_parfum[]" value="<?= $prix?>" <?php generateCheckedAttribute($_POST["t_parfum"],$prix) ?> /> 
             <label for="<?=$parfum?>"><?= $parfum ?> - <?= $prix ?> $</label><br/> 
         <?php endforeach?>
     </div>
-
     <button type="submit" value="Envoyer" name="envoyer" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer;">Envoyer</button>
 </form>
 
